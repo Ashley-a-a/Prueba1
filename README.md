@@ -108,6 +108,7 @@ salesdjango/
 │       ├── purchase_confirm.html    ← Confirmación de emisión
 │       ├── purchase_cancel.html     ← Confirmación de anulación
 │       ├── purchase_confirm_delete.html
+        ├── purchase_report.html 
 │       └── supplier_credit_note_form.html
 │
 ├── inventory/                       ← App de Inventario (solo modelos y admin)
@@ -198,6 +199,7 @@ Nueva Factura ──► Borrador ──► Emitir ──► Emitida ──► An
 |--------------------|-------------------------------------------------------------------------------------|
 | Compras            | Listar, Crear borrador, Confirmar, Anular, Ver detalle, Descargar PDF, Exportar     |
 | Nota de crédito    | Registrar nota de crédito del proveedor vinculada a la compra                       |
+| Reporte de costos  | Costo promedio, cantidad total y N° de compras por producto (Avg, Sum, Count) |
 
 #### Ciclo de vida de compras
 
