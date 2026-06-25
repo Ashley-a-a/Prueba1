@@ -454,3 +454,23 @@ def purchase_delete(request, pk):
         messages.success(request, f'Borrador #{purchase_id} eliminado.')
         return redirect('purchasing:purchase_list')
     return render(request, 'purchasing/purchase_confirm_delete.html', {'object': purchase})
+
+# ── Reporte: costo promedio por producto ─────────────────────────────────
+
+@login_required
+def purchase_report(request):
+    """Reporte de costo promedio por producto (reto opcional de la tarea)."""
+    from django.db.models import Avg, Count, Sum
+
+    reporte = (
+        PurchaseDetail.objects
+        .values('product__name')
+        .annotate(
+            avg_cost=Avg('unit_cost'),
+            total_qty=Sum('quantity'),
+            num_purchases=Count('purchase', distinct=True),
+        )
+        .order_by('product__name')
+    )
+
+    return render(request, 'purchasing/purchase_report.html', {'reporte': reporte})
