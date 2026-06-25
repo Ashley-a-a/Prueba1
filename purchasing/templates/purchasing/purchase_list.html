@@ -10,6 +10,7 @@
     <a href="?{% for k, v in request.GET.items %}{% if k != 'export' and k != 'page' %}{{ k }}={{ v }}&{% endif %}{% endfor %}export=excel"
        class="btn btn-sm btn-outline-success" title="Exportar Excel">&#128202; Excel</a>
     <a href="{% url 'purchasing:purchase_create' %}" class="btn btn-primary btn-sm">+ Nueva Compra</a>
+    <a href="{% url 'purchasing:purchase_report' %}" class="btn btn-outline-info btn-sm"> Reporte de Costos </a>
   </div>
 </div>
 
