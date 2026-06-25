@@ -6,6 +6,7 @@ app_name = 'purchasing'
 urlpatterns = [
     path('',                      views.PurchaseListView.as_view(),   name='purchase_list'),
     path('create/',               views.purchase_create,             name='purchase_create'),
+    path('report/',               views.purchase_report,             name='purchase_report'),
     path('<int:pk>/',             views.purchase_detail,             name='purchase_detail'),
     path('<int:pk>/edit/',        views.purchase_update,             name='purchase_update'),
     path('<int:pk>/confirm/',     views.purchase_confirm,            name='purchase_confirm'),
